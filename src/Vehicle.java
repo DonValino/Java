@@ -13,4 +13,16 @@ public abstract class Vehicle {
         colour = colourIn;
     }
 
+    //Getters
+    public int getPlateNumber()
+    {
+        return plateNumber;
+    }
+
+    public String getColour()
+    {
+        return colour;
+    }
+
+
 }
