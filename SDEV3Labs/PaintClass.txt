@@ -1,0 +1,78 @@
+public class Paint
+{
+  //Member Variable
+  private double coverage;
+  private static int total;
+  
+  //Constructor
+  public Paint(double c)
+  {
+    coverage = c;
+    total++;
+  }
+  
+  //calcamount()
+  public double calcAmount(Shape p)
+  {
+    return (p.getArea() / coverage());
+  }
+  
+   //calcamount()
+  public double calcAmount(Circle c)
+  {
+    return (c.getArea() / coverage());
+  }
+  
+    //calcamount()
+  public double calcAmount(Sphere c)
+  {
+    return (c.getArea() / coverage());
+  }
+  
+    //calcamount()
+  public double calcAmount(Square c)
+  {
+    return (c.getArea() / coverage());
+  }
+  
+  //total()
+  public static int getTotal()
+  {
+    return total;
+  }
+  
+  
+  public static void main(String [] args)
+  {
+    Paint p1 = new Paint(70)
+    Shape [] p = new Shape[4];
+    p[0] = new Circle();
+    p[1] = new Square();
+    p[2] = new Sphere();
+    p[3] = new Cube();
+    double maximum = p1.calcAmount(p[0]);
+    double minimum = p1.calcAmount(p[0]);
+    String maxName = "";
+    double amount = 0;
+    for(int i = 0; i <p.length;i++)
+    {
+      amount += p1.calcAmount(p[i]);
+      p[i].toString();
+      System.out.printf("Amount of paint required for",p[i].getName(), " is %,.2f%n",p1.calcAmount(p[i]));
+      if(p1.calcAmount(p[i]) > maximum)
+      {
+        maximum = p1.calcAmount(p[i]);
+        
+      }
+      
+      if(p1.calcAmount(p[i]) < maximum)
+      {
+        maximum = p1.calcAmount(p[i]);
+      }
+  }
+    System.out.println("The total amount of paint required is : " + amount + " litres");
+    System.out.println("The name of the shape that requires the most paint is : " + maximum);
+    System.out.println("The name of the shape that requires the least paint is : " + minimum);
+    System.out.println("The number of shapes created : " + Paint.getTotal());
+    }
+}
