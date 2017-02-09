@@ -1,0 +1,4 @@
+Total: 65
+Minimum: 11
+Maximum: 15
+Average: 13
